@@ -91,7 +91,7 @@ class EnvironmentOperationController extends Controller
 
             $customerdata = $this->checkPurch(setting('update_setting'));
             if ($customerdata->env) {
-                $appkey = $customerdata->env;
+                $appkey = stripslashes($customerdata->env);
             } else {
                 $appkey = 'base64:' . base64_encode(Str::random(32));
             }
