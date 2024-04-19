@@ -1,0 +1,22 @@
+{
+    "name": "laravel-lara/infoinst",
+    "description": "Description",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "laravelLara\\infoinst\\": "src/",
+            "laravelLara\\infoinst\\Console\\Commands\\": "src/Files"
+        },
+        "files": [
+            "src/utils/CustomFunctions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "spruko",
+            "email": "dev@team.spruko.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
