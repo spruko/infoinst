@@ -37,7 +37,7 @@ class EnvironmentManager
      */
     public function getEnvContent()
     {
-        if (! file_exists($this->envPath)) {
+        if (!file_exists($this->envPath)) {
             if (file_exists($this->envExamplePath)) {
                 copy($this->envExamplePath, $this->envPath);
             } else {
@@ -81,29 +81,29 @@ class EnvironmentManager
         $results = trans('installer_messages.environment.success');
 
         $envFileData =
-        
-        'APP_NAME='.$request->app_name."\n".
-        'APP_ENV='.'SPRUKO'."\n".
-        'APP_KEY='.'base64:'.base64_encode(Str::random(32))."\n".
-        'APP_DEBUG='.'false'."\n".
-        'APP_LOG_LEVEL='.'log'."\n".
-        'APP_URL='.$request->app_url."\n\n".
-        'DB_CONNECTION='.'mysql'."\n".
-        'DB_HOST='.$request->database_hostname."\n".
-        'DB_PORT='.$request->database_port."\n".
-        'DB_DATABASE='.$request->database_name."\n".
-        'DB_USERNAME='.$request->database_username."\n".
-        'DB_PASSWORD='.$request->database_password."\n\n".
-        'BROADCAST_DRIVER='.'log'."\n".
-        'CACHE_DRIVER='.'file'."\n".
-        'SESSION_DRIVER='.'file'."\n".
-        'QUEUE_DRIVER='.'sync'."\n\n".
-        'REDIS_HOST='.$request->redis_hostname."\n".
-        'REDIS_PASSWORD='.$request->redis_password."\n".
-        'REDIS_PORT='.$request->redis_port."\n\n".
-        'PUSHER_APP_ID='.$request->pusher_app_id."\n".
-        'PUSHER_APP_KEY='.$request->pusher_app_key."\n".
-        'PUSHER_APP_SECRET='.$request->pusher_app_secret;
+
+            'APP_NAME=' . $request->app_name . "\n" .
+            'APP_ENV=' . 'SPRUKO' . "\n" .
+            'APP_KEY=' . 'base64:' . base64_encode(Str::random(32)) . "\n" .
+            'APP_DEBUG=' . 'false' . "\n" .
+            'APP_LOG_LEVEL=' . 'log' . "\n" .
+            'APP_URL=' . $request->app_url . "\n\n" .
+            'DB_CONNECTION=' . 'mysql' . "\n" .
+            'DB_HOST=' . $request->database_hostname . "\n" .
+            'DB_PORT=' . $request->database_port . "\n" .
+            'DB_DATABASE=' . $request->database_name . "\n" .
+            'DB_USERNAME=' . $request->database_username . "\n" .
+            'DB_PASSWORD="' . $request->database_password  . '"' . "\n\n" .
+            'BROADCAST_DRIVER=' . 'log' . "\n" .
+            'CACHE_DRIVER=' . 'file' . "\n" .
+            'SESSION_DRIVER=' . 'file' . "\n" .
+            'QUEUE_DRIVER=' . 'sync' . "\n\n" .
+            'REDIS_HOST=' . $request->redis_hostname . "\n" .
+            'REDIS_PASSWORD=' . $request->redis_password . "\n" .
+            'REDIS_PORT=' . $request->redis_port . "\n\n" .
+            'PUSHER_APP_ID=' . $request->pusher_app_id . "\n" .
+            'PUSHER_APP_KEY=' . $request->pusher_app_key . "\n" .
+            'PUSHER_APP_SECRET=' . $request->pusher_app_secret;
 
         try {
             file_put_contents($this->envPath, $envFileData);
@@ -113,5 +113,4 @@ class EnvironmentManager
 
         return $results;
     }
-
 }

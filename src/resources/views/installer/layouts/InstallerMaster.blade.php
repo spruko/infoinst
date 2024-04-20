@@ -35,8 +35,8 @@
                             <i class="step__icon fa fa-user" aria-hidden="true"></i>
                         </li>
                         <li class="step__divider"></li>
-                        <li class="step__item {{ isActive('SprukoAppInstaller::environment')}} {{ isActive('SprukoAppInstaller::environmentWizard')}} {{ isActive('SprukoAppInstaller::environmentClassic')}}">
-                            @if(Request::is('install/environment') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
+                        <li class="step__item {{ isActive('SprukoAppInstaller::environment')}} {{ isActive('SprukoAppInstaller::chooseenvironment')}} {{ isActive('SprukoAppInstaller::importsql')}} {{ isActive('SprukoAppInstaller::environmentWizard')}} {{ isActive('SprukoAppInstaller::environmentClassic')}}">
+                            @if(Request::is('install/environment') || Request::is('install/chooseenvironment') || Request::is('install/importsql') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
                                 <a href="{{ route('SprukoAppInstaller::environment') }}">
                                     <i class="step__icon fa fa-cog" aria-hidden="true"></i>
                                 </a>
